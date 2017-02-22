@@ -50,7 +50,7 @@
             <div class="auto-overflow-y style-scroll">
                 <ul class="tabs-vertical tabs">
                     <li class="tab" v-for="link in links">
-                        <a class="waves-effect grey-text" :href="'#' + link.href"><i class="material-icons">{{link.icon}}</i>{{link.text}}</a>
+                        <a class="waves-effect grey-text" :href="'#' + link.href">'a'</a>
                     </li>
                     <li class="tab">
                         <div class="divider"></div>
@@ -66,7 +66,8 @@
 <script lang="ts">
     import {
         Vue,
-        Component
+        Component,
+        Prop
     } from 'av-ts'
 
     @Component
@@ -83,7 +84,7 @@
             icon: "rate_review",
             text: "Some Other Page",
             href: "someother"
-        }, ]
+        }]
 
         construct() {
             $(this.$el).find('.tabs').tabs();

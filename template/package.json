@@ -9,14 +9,14 @@
         "build": "node build/build.js"
     },
     "dependencies": {
-        "@types/d3": "^3.5.37",
+
+    },
+    "devDependencies": {
         "d3": "^3.5.17",
         "jquery": "^3.1.1",
         "materialize-css": "^0.98.0",
         "typescript": "^2.1.4",
-        "webpack": "^2.2.1"
-    },
-    "devDependencies": {
+        "webpack": "^2.2.1",
         "av-ts": "^0.6.3",
         "vue": "^2.1.0",
         "vuex": "^2.0.0",
