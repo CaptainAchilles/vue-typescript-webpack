@@ -12,9 +12,6 @@
 
     },
     "devDependencies": {
-        "d3": "^3.5.17",
-        "jquery": "^3.1.1",
-        "materialize-css": "^0.98.0",
         "typescript": "^2.1.4",
         "webpack": "^2.2.1",
         "av-ts": "^0.6.3",
@@ -32,10 +29,8 @@
         "html-webpack-plugin": "^2.8.1",
         "http-proxy-middleware": "^0.17.2",
         "json-loader": "^0.5.4",
-        "node-sass": "^3.13.0",
         "opn": "^4.0.2",
         "ora": "^0.3.0",
-        "sass-loader": "^4.1.1",
         "semver": "^5.3.0",
         "shelljs": "^0.7.4",
         "style-loader": "^0.13.1",

@@ -41,12 +41,6 @@ module.exports = {
                     fallback: 'style-loader'
                 })
             }, {
-                test: /\.scss$/,
-                use: extractCSS.extract({
-                    use: ['css-loader', 'sass-loader'],
-                    fallback: 'style-loader'
-                })
-            }, {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: {
@@ -95,13 +89,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-            'window.jQuery': 'jquery',
-            "Hammer": "hammerjs/hammer",
-            "d3": "d3"
-        }),
         extractCSS
     ]
 }
