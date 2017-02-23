@@ -1,8 +1,8 @@
 {
-    "name": "typescript-vue-example",
+    "name": "{{ name }}",
     "version": "1.0.0",
-    "description": "Typescript & Webpack 2 Example For Vue",
-    "author": "Nicholas Achilles",
+    "description": "{{ description }}",
+    "author": "{{ author }}",
     "private": true,
     "scripts": {
         "dev": "node build/dev-server.js",
