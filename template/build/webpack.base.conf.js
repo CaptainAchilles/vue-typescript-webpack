@@ -6,12 +6,12 @@ var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var env = process.env.NODE_ENV
-    // check env & config/index.js to decide weither to enable CSS Sourcemaps for the
-    // various preprocessor loaders added to vue-loader at the end of this file
+// check env & config/index.js to decide weither to enable CSS Sourcemaps for the
+// various preprocessor loaders added to vue-loader at the end of this file
 var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap)
 var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap)
 var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
-var extractCSS = new ExtractTextPlugin('[name].css');
+
 
 module.exports = {
     entry: {
@@ -35,33 +35,11 @@ module.exports = {
     },
     module: {
         rules: [{
-                test: /\.css$/,
-                use: extractCSS.extract({
-                    use: ['css-loader'],
-                    fallback: 'style-loader'
-                })
-            }, {
-                test: /\.vue$/,
-                loader: 'vue-loader',
-                options: {
-                    esModule: true,
-                    loaders: {
-                        css: extractCSS.extract({
-                            use: 'css-loader',
-                            fallback: 'vue-style-loader'
-                        })
-                    },
-                    postcss: [
-                        require('autoprefixer')({
-                            browsers: ['last 2 versions']
-                        })
-                    ]
-                }
-            },
-            {
                 test: /\.ts$/,
                 loader: 'ts-loader',
-                options: { appendTsSuffixTo: [/\.vue$/] },
+                options: {
+                    appendTsSuffixTo: [/\.vue$/]
+                },
                 include: [path.resolve(__dirname, "../"), path.resolve(__dirname, "../typings/modules")],
                 exclude: /node_modules/
             },
@@ -87,8 +65,5 @@ module.exports = {
             }
 
         ]
-    },
-    plugins: [
-        extractCSS
-    ]
+    }
 }
