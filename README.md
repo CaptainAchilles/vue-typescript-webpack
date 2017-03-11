@@ -1,4 +1,4 @@
-# typescript-vue-example
+# vue-typescript-webpack Example
 
 > Typescript & Webpack 2 Example
 
@@ -12,7 +12,7 @@ Based on the the [Jayway's Vue.js 2.0 workshop](https://jayway.github.io/vue-js-
 ## vue-cli
 This is a project template for [vue-cli](https://github.com/vuejs/vue-cli). It can be downloaded using:
 ```bash
-vue init CaptainAchilles/typescript-vue-example newproject
+vue init CaptainAchilles/vue-typescript-webpack newproject
 
 # install dependencies
 npm install
