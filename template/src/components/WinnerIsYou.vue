@@ -1,26 +1,13 @@
 <template>
-    <div id="home" class="valign-wrapper">
-        <div class="winner valign center-align">
-            <h1>A winner is you</h1>
-        </div>
-    </div>
+    <h1 class="winner">This page is intentionally styled poorly</h1>
 </template>
 <style scoped>
-    #home {
-        margin-left: 20%;
-        width: 80%;
-        height: 100%;
-    }
-    
     .winner {
-        width: 100%;
+        color: green;
     }
 </style>
 <script lang="ts">
-    import {
-        Vue,
-        Component
-    } from 'av-ts'
+    import {Vue, Component } from 'av-ts'
     @Component
     export default class WinnerIsYou extends Vue {
         construct() {}

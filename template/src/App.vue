@@ -5,15 +5,9 @@
   </div>
 </template>
 <style scoped>
-    #main {
-        height: 100%;
-    }
 </style>
 <script lang="ts">
-    import {
-        Vue,
-        Component
-    } from 'av-ts'
+    import {Vue, Component} from 'av-ts'
     import SideNav from './components/SideNav'
     import WinnerIsYou from './components/WinnerIsYou'
 
