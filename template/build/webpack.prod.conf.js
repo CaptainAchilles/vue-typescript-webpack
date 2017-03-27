@@ -16,6 +16,12 @@ var webpackConfig = merge(baseWebpackConfig, {
             extract: true
         }),
         rules: [{
+            test: /\.scss$/,
+            use: extractCSS.extract({
+                use: ['css-loader', 'sass-loader'],
+                fallback: 'style-loader'
+            })
+        }, {
             test: /\.css$/,
             use: extractCSS.extract({
                 use: ['css-loader'],

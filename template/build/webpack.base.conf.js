@@ -35,6 +35,11 @@ module.exports = {
     },
     module: {
         rules: [{
+                enforce: "pre",
+                test: /.vue$/,
+                loader: "eslint-loader",
+                exclude: "/node_modules/"
+            }, {
                 test: /\.ts$/,
                 loader: 'ts-loader',
                 options: {
@@ -42,20 +47,17 @@ module.exports = {
                 },
                 include: [path.resolve(__dirname, "../"), path.resolve(__dirname, "../typings/modules")],
                 exclude: /node_modules/
-            },
-            {
+            }, {
                 test: /\.json$/,
                 loader: 'json-loader'
-            },
-            {
+            }, {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'url-loader',
                 query: {
                     limit: 10000,
                     name: utils.assetsPath('img/[name].[hash:7].[ext]')
                 }
-            },
-            {
+            }, {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
                 loader: 'url-loader',
                 query: {
