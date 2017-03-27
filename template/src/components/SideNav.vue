@@ -9,7 +9,7 @@
     </ul>
 </template>
 <script lang="ts">
-    import {Vue, Component, Prop} from 'av-ts'
+    import { Vue, Component, Prop } from "av-ts";
 
     @Component
     export default class SideNav extends Vue {
@@ -22,9 +22,6 @@
         }, {
             text: "Some Other Page",
             href: "someother"
-        }]
-
-        construct() {
-        }
+        }];
     }
 </script>
