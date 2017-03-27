@@ -7,9 +7,8 @@
     }
 </style>
 <script lang="ts">
-    import {Vue, Component } from 'av-ts'
+    import { Vue, Component } from "av-ts";
+
     @Component
-    export default class WinnerIsYou extends Vue {
-        construct() {}
-    }
+    export default class WinnerIsYou extends Vue {}
 </script>

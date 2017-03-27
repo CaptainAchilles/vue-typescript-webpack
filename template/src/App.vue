@@ -7,9 +7,9 @@
 <style scoped>
 </style>
 <script lang="ts">
-    import {Vue, Component} from 'av-ts'
-    import SideNav from './components/SideNav'
-    import WinnerIsYou from './components/WinnerIsYou'
+    import { Vue, Component } from "av-ts";
+    import SideNav from "./components/SideNav";
+    import WinnerIsYou from "./components/WinnerIsYou";
 
     @Component({
         components: {
