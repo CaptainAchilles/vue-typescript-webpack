@@ -1,0 +1,50 @@
+{
+	"extends": "google",
+	"plugins": [
+		"html"
+	],
+	"parser": "typescript-eslint-parser",
+	"parserOptions": {
+		"sourceType": "module"
+	},
+	"rules": {
+		"comma-dangle": [
+			"error",
+			"never"
+		],
+		"no-empty-label": "off",
+		"keyword-spacing": "error",
+		"no-mixed-spaces-and-tabs": "error",
+		"no-unused-vars": "off",
+		"arrow-body-style": [
+			"error", 
+			"as-needed", { 
+				"requireReturnForObjectLiteral": true 
+			}
+		],
+		"arrow-parens": [
+			"error", 
+			"as-needed"
+		],
+		"linebreak-style": "off",
+		"quotes": [
+			"error",
+			"double",
+			{
+				"allowTemplateLiterals": true
+			}
+		],
+		"require-jsdoc": "off",
+		"max-len": [
+			"error",
+			80,
+			{
+				"ignoreComments": true
+			}
+		],
+		"object-curly-spacing": [
+			"error",
+			"always"
+		]
+	}
+}

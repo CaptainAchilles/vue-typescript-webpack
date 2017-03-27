@@ -7,6 +7,7 @@ Based on the the [Jayway's Vue.js 2.0 workshop](https://jayway.github.io/vue-js-
   * Hot reloading
   * vue-loader for .vue files
   * Typescript 2.0
+  * Typescripting linting
 
 # Usage
 ## vue-cli
