@@ -3,7 +3,8 @@
 
 <template>
     <ul>
-        <li v-for="link in links">
+        <li @click="toggleMenu">\{{ showLinks ? "Hide Menu" : "Show Menu" }}
+        <li v-if="showLinks" v-for="link in links">
             <a :href="'#' + link.href">\{{ link.text }}</a>
         </li>
     </ul>
@@ -23,5 +24,16 @@
             text: "Some Other Page",
             href: "someother"
         }];
+
+        showLinks: boolean = false;
+
+        toggleMenu() {
+            // Have a branch to test for branching in report
+            if (this.showLinks) {
+                this.showLinks = false;
+            } else {
+                this.showLinks = true;
+            }
+        }
     }
 </script>
