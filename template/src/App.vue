@@ -1,7 +1,7 @@
 <template>
   <div id="main">
     <side-nav></side-nav>
-    <winner-is-you></winner-is-you>
+    <winner-is-you :showText="'This page is intentionally styled poorly'"></winner-is-you>
   </div>
 </template>
 <style scoped>
