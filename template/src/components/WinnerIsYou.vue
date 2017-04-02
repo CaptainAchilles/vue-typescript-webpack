@@ -1,5 +1,5 @@
 <template>
-    <h1 class="winner">\{{ showText.toUpperCase() }}</h1>
+    <h1 class="winner" v-if="showText">\{{ showText.toUpperCase() }}</h1>
 </template>
 <style scoped>
     .winner {
