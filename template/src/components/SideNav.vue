@@ -1,4 +1,7 @@
 <style scoped>
+    ul > li:first-of-type {
+        cursor: pointer;
+    }
 </style>
 
 <template>
@@ -28,7 +31,7 @@
         showLinks: boolean = false;
 
         toggleMenu() {
-            // Have a branch to test for branching in report
+            // Have a branch for code coverage reasons
             if (this.showLinks) {
                 this.showLinks = false;
             } else {
