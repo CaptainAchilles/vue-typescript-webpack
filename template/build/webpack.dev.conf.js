@@ -4,6 +4,7 @@ var merge = require('webpack-merge')
 var utils = require('./utils')
 var baseWebpackConfig = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var path = require('path')
 
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
@@ -36,7 +37,9 @@ module.exports = merge(baseWebpackConfig, {
             loader: 'vue-loader',
             options: {
                 esModule: true,
-                loaders: {},
+                postLoaders: {
+                    'ts': 'istanbul-instrumenter-loader?esModules=true'
+                },
                 postcss: [
                     require('autoprefixer')({
                         browsers: ['last 2 versions']
@@ -45,8 +48,7 @@ module.exports = merge(baseWebpackConfig, {
             }
         }]
     },
-    // eval-source-map is faster for development
-    devtool: 'eval-source-map',
+    devtool: false,
     plugins: [
         new webpack.DefinePlugin({
             'process.env': config.dev.env

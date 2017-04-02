@@ -1,5 +1,5 @@
 <template>
-    <h1 class="winner" v-if="showText">\{{ showText.toUpperCase() }}</h1>
+    <h1 class="winner" @click="doStuff" v-if="showText">\{{ showText.toUpperCase() }}</h1>
 </template>
 <style scoped>
     .winner {
@@ -13,5 +13,13 @@
     export default class WinnerIsYou extends Vue {
         @Prop
         showText: string;
+
+        doStuff() {
+            if (this.showText == "This page is intentionally styled poorly") {
+                this.showText = "asdf";
+            } else {
+                this.showText = "This page is intentionally styled poorly";
+            }
+        }
     }
 </script>
