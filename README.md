@@ -3,11 +3,14 @@
 > Typescript & Webpack 2 Example
 
 Based on the the [Jayway's Vue.js 2.0 workshop](https://jayway.github.io/vue-js-workshop/), this project upgrades it to contain
+  * Production ready
   * Webpack 2
   * Hot reloading
   * vue-loader for .vue files
   * Typescript 2.0
   * Typescripting linting
+  * Unit testing with mocha for Vue components and other files
+  * Code coverage in Vue and TypeScript files
 
 # Usage
 ## vue-cli
@@ -53,6 +56,14 @@ npm run build
   * Webpack files
   * Bundles project into ./dist 
   * Ready for deployment
+
+* `npm run lint`: Runs linter
+  * Linter also runs on build/dev
+  * Lints all ts and ts components in Vue files
+
+* `npm run unit`: Run Tests
+  * Runs all *.spec in test/unit/*.spec
+  * Generates code coverage for all ./src/components
 
 # License
 See the license file in the root of the repository
