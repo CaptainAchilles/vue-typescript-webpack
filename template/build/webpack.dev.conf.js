@@ -46,7 +46,7 @@ module.exports = merge(baseWebpackConfig, {
         }]
     },
     // eval-source-map is faster for development
-    devtool: '#eval-source-map',
+    devtool: 'eval-source-map',
     plugins: [
         new webpack.DefinePlugin({
             'process.env': config.dev.env
