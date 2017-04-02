@@ -65,5 +65,19 @@ npm run build
   * Runs all *.spec in test/unit/*.spec
   * Generates code coverage for all ./src/components
 
+# Code Linting within Editors
+
+## VSCode
+VSCode should automatically lint and display typescript errors in the editor.
+
+## Vim
+Vim can use the plugins [syntastic](https://github.com/vim-syntastic/syntastic) 
+and [vim-vue](https://github.com/posva/vim-vue) with the 
+following NPM packages
+
+``` bash
+npm install -g typescript typescript-eslint-parser eslint-config-google eslint
+```
+
 # License
 See the license file in the root of the repository
