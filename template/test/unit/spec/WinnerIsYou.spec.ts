@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import WinnerIsYou from 'components/WinnerIsYou'
-import assert from "assert";
+import  "chai";
+const assert = chai.assert;
 
 describe('WinnerIsYou.vue', function () {
 
