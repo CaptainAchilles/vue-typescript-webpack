@@ -1,14 +1,14 @@
-import * as Vue from 'vue'
-import App from './App'
+import * as Vue from "vue";
+import App from "./App";
 
-import './styles/main.css'
+import "./styles/main.css";
 
-var appContainer = document.createElement("div");
+let appContainer = document.createElement("div");
 appContainer.id = "app";
 
 document.body.appendChild(appContainer);
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  render: h => h(App)
-})
+    el: "#app",
+    render: h => h(App)
+});

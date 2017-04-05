@@ -1,12 +1,11 @@
-import Vue from 'vue'
-import WinnerIsYou from 'components/WinnerIsYou'
-import  "chai";
+import Vue from "vue";
+import WinnerIsYou from "components/WinnerIsYou";
+import "chai";
 const assert = chai.assert;
 
-describe('WinnerIsYou.vue', function () {
-
-    beforeEach(function () {
-        var main = document.getElementById("app");
+describe("WinnerIsYou.vue", () => {
+    beforeEach(() => {
+        let main = document.getElementById("app");
         if (main) {
             main.innerHTML = "";
         } else {
@@ -16,46 +15,50 @@ describe('WinnerIsYou.vue', function () {
         }
     });
 
-    it('Renders nothing when showText undefined', function () {
-        var vm = new WinnerIsYou().$mount("#app");
+    it("Renders nothing when showText undefined", () => {
+        let vm = new WinnerIsYou().$mount("#app");
         
         assert.equal(vm.showText, null);
-        assert.equal(vm.$el.textContent, '');
-    })
+        assert.equal(vm.$el.textContent, "");
+    });
     
 
-    it('Updates correctly', function (done) {
-        var vm = new WinnerIsYou().$mount("#app");
-        assert.equal(vm.showText, null)
-        assert.equal(vm.$el.textContent, '')
-        vm.showText = 'This page is intentionally styled poorly'
+    it("Updates correctly", done => {
+        let vm = new WinnerIsYou().$mount("#app");
+        assert.equal(vm.showText, null);
+        assert.equal(vm.$el.textContent, "");
+        vm.showText = "This page is intentionally styled poorly";
 
-        Vue.nextTick(function () {
-            assert.equal(vm.showText, 'This page is intentionally styled poorly')
-            assert.equal(vm.$el.textContent, 'This page is intentionally styled poorly'.toUpperCase())
+        Vue.nextTick(() => {
+            assert.equal(vm.showText,
+                "This page is intentionally styled poorly");
+            assert.equal(vm.$el.textContent,
+                "This page is intentionally styled poorly".toUpperCase());
             done();
-        })
-    })
+        });
+    });
     
-    it('Captializes correctly', function (done) {
-        var vm = new WinnerIsYou().$mount("#app");
+    it("Captializes correctly", done => {
+        let vm = new WinnerIsYou().$mount("#app");
         
-        assert.equal(vm.showText, null)
-        assert.equal(vm.$el.textContent, '')
-        vm.showText = 'This page is intentionally styled poorly'
+        assert.equal(vm.showText, null);
+        assert.equal(vm.$el.textContent, "");
+        vm.showText = "This page is intentionally styled poorly";
 
-        Vue.nextTick(function () {
-            assert.equal(vm.showText, 'This page is intentionally styled poorly')
-            assert.equal(vm.$el.textContent, 'This page is intentionally styled poorly'.toUpperCase())
+        Vue.nextTick(() => {
+            assert.equal(vm.showText,
+                "This page is intentionally styled poorly");
+            assert.equal(vm.$el.textContent,
+                "This page is intentionally styled poorly".toUpperCase());
             
-            vm.showText = 'hUh';
-            Vue.nextTick(function () {
-                assert.notEqual(vm.showText, 'This page is intentionally styled poorly')
-                assert.equal(vm.showText, 'hUh')
-                assert.equal(vm.$el.textContent, 'huh'.toUpperCase())
-                done();                
-            })
-        })
-    })
-    
-})
+            vm.showText = "hUh";
+            Vue.nextTick(() => {
+                assert.notEqual(vm.showText,
+                    "This page is intentionally styled poorly");
+                assert.equal(vm.showText, "hUh");
+                assert.equal(vm.$el.textContent, "huh".toUpperCase());
+                done();
+            });
+        });
+    });
+});
