@@ -20,23 +20,17 @@ module.exports = function(config) {
         preprocessors: {
             "spec/**/*.ts": ['webpack']
         },
-        //files: ['./init.test.js'],
-        //preprocessors: {
-        //    './init.test.js': ['webpack']
-        //},
         webpack: webpackConfig,
         webpackMiddleware: {
             noInfo: true
         },
         singleRun: true,
         coverageIstanbulReporter: {
-            // reports can be any that are listed here: https://github.com/istanbuljs/istanbul-reports/tree/590e6b0089f67b723a1fdf57bc7ccc080ff189d7/lib
             reports: ['html', 'text-summary'],
             // base output directory. If you include %browser% in the path it will be replaced with the karma browser name
             dir: path.join(__dirname, './coverage'),
             // if using webpack and pre-loaders, work around webpack breaking the source path
             fixWebpackSourcePaths: true,
-            // Most reporters accept additional config options. You can pass these through the `report-config` option
             'report-config': {
                 // all options available at: https://github.com/istanbuljs/istanbul-reports/blob/590e6b0089f67b723a1fdf57bc7ccc080ff189d7/lib/html/index.js#L135-L137
                 html: {
