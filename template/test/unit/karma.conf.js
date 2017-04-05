@@ -5,7 +5,7 @@
 var webpackConfig = require('../../build/webpack.dev.conf')
 var path = require('path');
 
-module.exports = function (config) {
+module.exports = function(config) {
     config.set({
         // to run in additional browsers:
         // 1. install corresponding karma launcher
@@ -13,13 +13,17 @@ module.exports = function (config) {
         // 2. add it to the `browsers` array below.
 
         browsers: ['PhantomJS'],
-        frameworks: ['mocha'],
+        frameworks: ['mocha', 'chai'],
         reporters: ['spec', 'coverage-istanbul'],
 
-        files: ['./init.test.js'],
+        files: ["spec/**/*.ts"],
         preprocessors: {
-            './init.test.js': ['webpack']
+            "spec/**/*.ts": ['webpack']
         },
+        //files: ['./init.test.js'],
+        //preprocessors: {
+        //    './init.test.js': ['webpack']
+        //},
         webpack: webpackConfig,
         webpackMiddleware: {
             noInfo: true

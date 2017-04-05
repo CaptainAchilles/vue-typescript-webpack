@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import SideNav from 'components/SideNav'
-import assert from "assert";
+import  "chai";
+const assert = chai.assert;
 
 describe('SideNav.vue', function () {
     beforeEach(function () {
@@ -26,7 +27,7 @@ describe('SideNav.vue', function () {
         
         // The only child is the 'Toggle Links' item
         assert.equal(vm.$el.children.length, 1);
-        vm.$el.children[0].click();
+        (vm.$el.children[0] as HTMLElement).click();
         
         Vue.nextTick(function() {
             // There are 3 links + 1 toggle link item.
@@ -41,11 +42,11 @@ describe('SideNav.vue', function () {
 
         // The only child is the 'Toggle Links' item
         assert.equal(vm.$el.children.length, 1);
-        vm.$el.children[0].click();
+        (vm.$el.children[0] as HTMLElement).click();
 
         Vue.nextTick(function() {
             assert.equal(vm.$el.children.length, 4);
-            vm.$el.children[0].click();
+            (vm.$el.children[0] as HTMLElement).click();
 
             Vue.nextTick(function() {
                 // Clicking it again should hide all links
