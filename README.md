@@ -8,8 +8,8 @@ Based on the the [Jayway's Vue.js 2.0 workshop](https://jayway.github.io/vue-js-
   * Hot reloading
   * vue-loader for .vue files
   * Typescript 2.0
-  * Typescripting linting
-  * Unit testing with mocha for Vue components and other files
+  * Typescripting linting inside of Vue files
+  * Unit testing with in Typescript for Vue components and other files
   * Code coverage in Vue and TypeScript files
 
 # Usage
@@ -60,10 +60,11 @@ npm run build
 * `npm run lint`: Runs linter
   * Linter also runs on build/dev
   * Lints all ts and ts components in Vue files
+  * Also runs linter over test files
 
 * `npm run unit`: Run Tests
-  * Runs all *.spec in test/unit/*.spec
-  * Generates code coverage for all ./src/components
+  * Runs all `*.spec.ts` in `test/unit/*.spec.ts`
+  * Generates code coverage for all `./src/components` in `./test/unit/coverage/html`
 
 # Code Linting within Editors
 
