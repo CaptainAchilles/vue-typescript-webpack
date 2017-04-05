@@ -1,11 +1,11 @@
-import Vue from 'vue'
-import SideNav from 'components/SideNav'
-import  "chai";
+import Vue from "vue";
+import SideNav from "components/SideNav";
+import "chai";
 const assert = chai.assert;
 
-describe('SideNav.vue', function () {
-    beforeEach(function () {
-        var main = document.getElementById("app");
+describe("SideNav.vue", () => {
+    beforeEach(() => {
+        let main = document.getElementById("app");
         if (main) {
             main.innerHTML = "";
         } else {
@@ -15,36 +15,36 @@ describe('SideNav.vue', function () {
         }
     });
 
-    it('Hides Links Intially', function () {
-        var vm = new SideNav().$mount("#app");
+    it("Hides Links Intially", () => {
+        let vm = new SideNav().$mount("#app");
         
-        // The only child is the 'Toggle Links' item
+        // The only child is the "Toggle Links" item
         assert.equal(vm.$el.children.length, 1);
-    });
+    })
 
-    it('Shows links when clicked', function (done) {
-        var vm = new SideNav().$mount("#app");
+    it("Shows links when clicked", (done) => {
+        let vm = new SideNav().$mount("#app");
         
-        // The only child is the 'Toggle Links' item
+        // The only child is the "Toggle Links" item
         assert.equal(vm.$el.children.length, 1);
         (vm.$el.children[0] as HTMLElement).click();
         
-        Vue.nextTick(function() {
+        Vue.nextTick(() => {
             // There are 3 links + 1 toggle link item.
             assert.equal(vm.$el.children.length, 4);
             done();
-        })
+        });
     });
 
 
-    it('Toggles links properly', function (done) {
-        var vm = new SideNav().$mount("#app");
+    it("Toggles links properly", done => {
+        let vm = new SideNav().$mount("#app");
 
-        // The only child is the 'Toggle Links' item
+        // The only child is the "Toggle Links" item
         assert.equal(vm.$el.children.length, 1);
         (vm.$el.children[0] as HTMLElement).click();
 
-        Vue.nextTick(function() {
+        Vue.nextTick(() => {
             assert.equal(vm.$el.children.length, 4);
             (vm.$el.children[0] as HTMLElement).click();
 
@@ -52,8 +52,7 @@ describe('SideNav.vue', function () {
                 // Clicking it again should hide all links
                 assert.equal(vm.$el.children.length, 1);
                 done();
-            })
-        })
-    })
-
+            });
+        });
+    });
 });
