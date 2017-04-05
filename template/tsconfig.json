@@ -1,9 +1,12 @@
 {
     "compilerOptions": {
         "target": "es5",
+        "allowSyntheticDefaultImports": true,
         "lib": ["es5", "es2015.promise", "dom"],
         "experimentalDecorators": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "module": "es2015",
+        "moduleResolution": "node"
     },
     "files": [
 	    "./src/main.ts"
