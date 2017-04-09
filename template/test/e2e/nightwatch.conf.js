@@ -3,8 +3,8 @@ var config = require('../../config')
 
 // http://nightwatchjs.org/gettingstarted#settings-file
 module.exports = {
-  src_folders: ['test/e2e/specs'],
-  output_folder: 'test/e2e/reports',
+  src_folders: ['test/e2e/spec'],
+  output_folder: 'test/e2e/report',
 
   selenium: {
     start_process: true,
