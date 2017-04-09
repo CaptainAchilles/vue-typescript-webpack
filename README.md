@@ -66,6 +66,11 @@ npm run build
   * Runs all `*.spec.ts` in `test/unit/*.spec.ts`
   * Generates code coverage for all `./src/components` in `./test/unit/coverage/html`
 
+* `npm run e2e`: Run Integration tests
+  * Runs all `*.spec.js` in `test/e2e/*.spec.js`
+  * Tests are currently JavaScript, but plan to be supported ts
+  * Generates report in `./test/e2e/coverage`
+
 # Code Linting within Editors
 
 ## VSCode
