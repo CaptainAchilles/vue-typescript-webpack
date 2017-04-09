@@ -7,9 +7,9 @@ module.exports = {
 
     browser
       .url(devServer)
-      .waitForElementVisible('#app', 1000)
-      .assert.elementPresent('.hello')
-      .assert.containsText('h1', 'Welcome to Your Vue.js App')
+      .waitForElementVisible('#main', 1000)
+      .assert.elementPresent('.winner')
+      .assert.containsText('.winner', 'THIS PAGE IS INTENTIONALLY STYLED POORLY')
       .end()
   }
 }
