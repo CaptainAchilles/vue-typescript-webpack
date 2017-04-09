@@ -5,7 +5,7 @@ module.exports = {
         // automatically uses dev Server port from /config.index.js
         // default: http://localhost:8080
         // see nightwatch.conf.js
-        const devServer = browser.globals.devServerURL
+        const devServer = browser.globals.devServerURL;
 
         browser
             .url(devServer)
@@ -15,16 +15,14 @@ module.exports = {
 
         browser.click("ul li:first-of-type", function () {
             browser.elements("css selector", "ul li", function (elements) {
-                assert.equal(4, elements.value.length)
+                assert.equal(4, elements.value.length);
                 browser.click("ul li:first-of-type", function () {
                     browser.elements("css selector", "ul li", function (elements) {
-                        assert.equal(1, elements.value.length)
-                        browser.end()
-                    })
+                        assert.equal(1, elements.value.length);
+                        browser.end();
+                    });
                 });
-
             })
         });
-
     }
 }
