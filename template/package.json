@@ -9,7 +9,8 @@
         "build": "node build/build.js",
         "lint": "node lint.js -c .eslintrc.json --ext .js,.vue,.ts src/ test/",
         "unit": "karma start test/unit/karma.conf.js",
-        "e2e": "node test/e2e/runner.js"
+        "e2e": "node test/e2e/runner.js",
+        "test": "npm run unit && npm run e2e"
     },
     "dependencies": {
         "av-ts": "^0.6.3",
