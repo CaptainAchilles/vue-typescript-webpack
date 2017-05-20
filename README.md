@@ -3,10 +3,10 @@
 > Typescript & Webpack 2 Example
 
 Based on the the [Jayway's Vue.js 2.0 workshop](https://jayway.github.io/vue-js-workshop/), this project upgrades it to contain
-  * Production ready
+  * Follows Vue best practice
   * Webpack 2
   * Hot reloading
-  * vue-loader for .vue files
+  * Uses webpack vue-loader for .vue files
   * Typescript 2.0
   * Typescripting linting inside of Vue files
   * Unit testing with in Typescript for Vue components and other files
