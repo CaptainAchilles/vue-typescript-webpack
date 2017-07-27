@@ -12,24 +12,44 @@
         </li>
     </ul>
 </template>
+
 <script lang="ts">
-    import { Vue, Component, Prop } from "av-ts";
+import Vue, { ComponentOptions } from "vue";
 
-    @Component
-    export default class SideNav extends Vue {
-        links = [{
-            text: "Home",
-            href: "home"
-        }, {
-            text: "Other Page",
-            href: "other"
-        }, {
-            text: "Some Other Page",
-            href: "someother"
-        }];
+interface ILink {
+    text: string;
+    href: string;
+};
 
-        showLinks: boolean = false;
+interface ISideNav extends Vue {
+    links: Array<ILink>;
+    showLinks: boolean;
+};
 
+export default {
+
+    data: function() {
+        return {
+            links: [
+                {
+                    text: "Home",
+                    href: "home"
+                },
+                {
+                    text: "Other Page",
+                    href: "other"
+                },
+                {
+                    text: "Some Other Page",
+                    href: "someother"
+                }
+            ],
+
+            showLinks: false
+        };
+    },
+
+    methods: {
         toggleMenu() {
             // Have a branch for code coverage reasons
             if (this.showLinks) {
@@ -39,4 +59,6 @@
             }
         }
     }
+} as ComponentOptions<ISideNav>;
+
 </script>

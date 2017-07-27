@@ -13,7 +13,6 @@
         "test": "npm run unit && npm run e2e"
     },
     "dependencies": {
-        "av-ts": "^0.6.3",
         "vue": "^2.1.0"
     },
     "devDependencies": {
