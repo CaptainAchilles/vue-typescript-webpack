@@ -1,9 +1,12 @@
 import Vue from "vue";
-import WinnerIsYou from "components/WinnerIsYou";
+import WinnerIsYouComponent, { IWinnerIsYou }  from "../../../src/components/WinnerIsYou.vue";
 import "chai";
 const assert = chai.assert;
 
+const WinnerIsYou = Vue.extend(WinnerIsYouComponent);
+
 describe("WinnerIsYou.vue", () => {
+
     beforeEach(() => {
         let main = document.getElementById("app");
         if (main) {
@@ -16,22 +19,21 @@ describe("WinnerIsYou.vue", () => {
     });
 
     it("Renders nothing when showText undefined", () => {
-        let vm = new WinnerIsYou().$mount("#app");
-        
-        assert.equal(vm.showText, null);
+        let vm = new WinnerIsYou().$mount("#app") as IWinnerIsYou;
+    
+        assert.equal(vm.text, "");
         assert.equal(vm.$el.textContent, "");
     });
     
-
     it("Updates correctly", done => {
-        let vm = new WinnerIsYou().$mount("#app");
-        assert.equal(vm.showText, null);
+        let vm = new WinnerIsYou().$mount("#app") as IWinnerIsYou;
+        assert.equal(vm.text, "");
         assert.equal(vm.$el.textContent, "");
         vm.showText = "This page is intentionally styled poorly";
 
         Vue.nextTick(() => {
-            assert.equal(vm.showText,
-                "This page is intentionally styled poorly");
+            assert.equal(vm.text,
+                "This page is intentionally styled poorly".toUpperCase());
             assert.equal(vm.$el.textContent,
                 "This page is intentionally styled poorly".toUpperCase());
             done();
@@ -39,24 +41,24 @@ describe("WinnerIsYou.vue", () => {
     });
     
     it("Captializes correctly", done => {
-        let vm = new WinnerIsYou().$mount("#app");
-        
-        assert.equal(vm.showText, null);
+        let vm = new WinnerIsYou().$mount("#app") as IWinnerIsYou;
+        assert.equal(vm.text, "");
         assert.equal(vm.$el.textContent, "");
         vm.showText = "This page is intentionally styled poorly";
+        vm.doStuff();
 
         Vue.nextTick(() => {
-            assert.equal(vm.showText,
-                "This page is intentionally styled poorly");
+            assert.equal(vm.showAlternate, true);
+            assert.equal(vm.text,
+                "ALTERNATIVE TEXT");
             assert.equal(vm.$el.textContent,
-                "This page is intentionally styled poorly".toUpperCase());
+                "ALTERNATIVE TEXT".toUpperCase());
+            vm.doStuff();
             
-            vm.showText = "hUh";
             Vue.nextTick(() => {
-                assert.notEqual(vm.showText,
-                    "This page is intentionally styled poorly");
-                assert.equal(vm.showText, "hUh");
-                assert.equal(vm.$el.textContent, "huh".toUpperCase());
+                assert.equal(vm.showAlternate, false);
+                assert.equal(vm.text, "This page is intentionally styled poorly".toUpperCase());
+                assert.equal(vm.$el.textContent, "This page is intentionally styled poorly".toUpperCase());
                 done();
             });
         });

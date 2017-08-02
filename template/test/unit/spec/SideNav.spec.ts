@@ -1,7 +1,10 @@
 import Vue from "vue";
-import SideNav from "components/SideNav";
+import SideNavComponent from "../../../src/components/SideNav.vue";
 import "chai";
 const assert = chai.assert;
+
+
+const SideNav = Vue.extend(SideNavComponent);
 
 describe("SideNav.vue", () => {
     beforeEach(() => {

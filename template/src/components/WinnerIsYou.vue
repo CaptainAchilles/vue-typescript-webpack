@@ -1,5 +1,5 @@
 <template>
-    <h1 class="winner" @click="doStuff" v-if="showText">{{ showText.toUpperCase() }}</h1>
+    <h1 class="winner" @click="doStuff" v-if="text">{{ text }}</h1>
 </template>
 
 <style scoped>
@@ -11,26 +11,36 @@
 <script lang="ts">
 import Vue, { ComponentOptions } from "vue";
 
-interface IWinnerIsYou extends Vue {
+export interface IWinnerIsYou extends Vue {
     showText: string;
+    showAlternate: boolean;
+    text: string;
     doStuff(): void;
 };
 
 export default {
 
+    props: {
+        "showText": {
+            default: ""
+        }
+    },
+
     data: function() {
         return {
-            showText: "This page is intentionally styled poorly"
+            showAlternate: false
         };
+    },
+    computed: {
+        text: function() {
+            return this.showAlternate
+                ? "ALTERNATIVE TEXT" : this.showText.toUpperCase();
+        }
     },
 
     methods: {
         doStuff() {
-            if (this.showText == "This page is intentionally styled poorly") {
-                this.showText = "asdf";
-            } else {
-                this.showText = "This page is intentionally styled poorly";
-            }
+            this.showAlternate = !this.showAlternate;
         }
     }
 
