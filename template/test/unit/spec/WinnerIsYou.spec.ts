@@ -1,12 +1,11 @@
 import Vue from "vue";
-import WinnerIsYouComponent, { IWinnerIsYou }  from "../../../src/components/WinnerIsYou.vue";
+import WinnerIsYouComponent, { IWinnerIsYou } from "../../../src/components/WinnerIsYou.vue";
 import "chai";
 const assert = chai.assert;
 
 const WinnerIsYou = Vue.extend(WinnerIsYouComponent);
 
 describe("WinnerIsYou.vue", () => {
-
     beforeEach(() => {
         let main = document.getElementById("app");
         if (main) {
@@ -25,7 +24,7 @@ describe("WinnerIsYou.vue", () => {
         assert.equal(vm.$el.textContent, "");
     });
     
-    it("Updates correctly", done => {
+    it("Updates correctly", (done) => {
         let vm = new WinnerIsYou().$mount("#app") as IWinnerIsYou;
         assert.equal(vm.text, "");
         assert.equal(vm.$el.textContent, "");
@@ -40,7 +39,7 @@ describe("WinnerIsYou.vue", () => {
         });
     });
     
-    it("Captializes correctly", done => {
+    it("Captializes correctly", (done) => {
         let vm = new WinnerIsYou().$mount("#app") as IWinnerIsYou;
         assert.equal(vm.text, "");
         assert.equal(vm.$el.textContent, "");
