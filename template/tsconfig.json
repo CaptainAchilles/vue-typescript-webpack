@@ -9,6 +9,7 @@
         "moduleResolution": "node"
     },
     "files": [
+        "./src/index.d.ts",
 	    "./src/main.ts"
 	]
 }
