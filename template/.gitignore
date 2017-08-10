@@ -10,7 +10,6 @@ dist/
 # Editor Files #
 *~
 *.swp
-.editorconfig
 .vs/
 .vscode/
 
