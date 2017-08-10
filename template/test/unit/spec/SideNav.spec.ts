@@ -16,22 +16,25 @@ describe("SideNav.vue", () => {
             main.id = "app";
             document.body.appendChild(main);
         }
+        const mountPoint = document.createElement("div");
+        mountPoint.id = "mountMe";
+        document.getElementById("app").appendChild(mountPoint);
     });
 
     it("Hides Links Intially", () => {
-        let vm = new SideNav().$mount("#app");
-        
+        let vm = new SideNav().$mount("#mountMe");
+
         // The only child is the "Toggle Links" item
         assert.equal(vm.$el.children.length, 1);
     });
 
     it("Shows links when clicked", (done) => {
-        let vm = new SideNav().$mount("#app");
-        
+        let vm = new SideNav().$mount("#mountMe");
+
         // The only child is the "Toggle Links" item
         assert.equal(vm.$el.children.length, 1);
         (vm.$el.children[0] as HTMLElement).click();
-        
+
         Vue.nextTick(() => {
             // There are 3 links + 1 toggle link item.
             assert.equal(vm.$el.children.length, 4);
@@ -41,7 +44,7 @@ describe("SideNav.vue", () => {
 
 
     it("Toggles links properly", (done) => {
-        let vm = new SideNav().$mount("#app");
+        let vm = new SideNav().$mount("#mountMe");
 
         // The only child is the "Toggle Links" item
         assert.equal(vm.$el.children.length, 1);
@@ -51,7 +54,7 @@ describe("SideNav.vue", () => {
             assert.equal(vm.$el.children.length, 4);
             (vm.$el.children[0] as HTMLElement).click();
 
-            Vue.nextTick(function() {
+            Vue.nextTick(() => {
                 // Clicking it again should hide all links
                 assert.equal(vm.$el.children.length, 1);
                 done();
