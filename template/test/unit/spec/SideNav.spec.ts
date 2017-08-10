@@ -23,7 +23,7 @@ describe("SideNav.vue", () => {
         
         // The only child is the "Toggle Links" item
         assert.equal(vm.$el.children.length, 1);
-    })
+    });
 
     it("Shows links when clicked", (done) => {
         let vm = new SideNav().$mount("#app");
@@ -40,7 +40,7 @@ describe("SideNav.vue", () => {
     });
 
 
-    it("Toggles links properly", done => {
+    it("Toggles links properly", (done) => {
         let vm = new SideNav().$mount("#app");
 
         // The only child is the "Toggle Links" item
