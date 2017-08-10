@@ -1,25 +1,49 @@
 <template>
-    <h1 class="winner" @click="doStuff" v-if="showText">\{{ showText.toUpperCase() }}</h1>
+    <h1 class="winner" @click="doStuff" v-if="text">{{ text }}</h1>
 </template>
+
 <style scoped>
     .winner {
         color: green;
     }
 </style>
+
 <script lang="ts">
-    import { Vue, Component, Prop } from "av-ts";
+import Vue, { ComponentOptions } from "vue";
 
-    @Component
-    export default class WinnerIsYou extends Vue {
-        @Prop
-        showText: string;
+export interface IWinnerIsYou extends Vue {
+    showText: string;
+    showAlternate: boolean;
+    text: string;
+    doStuff(): void;
+};
 
+export default {
+
+    props: {
+        "showText": {
+            default: ""
+        }
+    },
+
+    data: function() {
+        return {
+            showAlternate: false
+        };
+    },
+    computed: {
+        text: function() {
+            return this.showAlternate
+                ? "ALTERNATIVE TEXT" : this.showText.toUpperCase();
+        }
+    },
+
+    methods: {
         doStuff() {
-            if (this.showText == "This page is intentionally styled poorly") {
-                this.showText = "asdf";
-            } else {
-                this.showText = "This page is intentionally styled poorly";
-            }
+            this.showAlternate = !this.showAlternate;
         }
     }
+
+} as ComponentOptions<IWinnerIsYou>;
+
 </script>
