@@ -10,8 +10,8 @@
 
 <script lang="ts">
 import Vue, { ComponentOptions } from "vue";
-import SideNav from "./components/SideNav";
-import WinnerIsYou from "./components/WinnerIsYou";
+import SideNav from "./components/SideNav.vue";
+import WinnerIsYou from "./components/WinnerIsYou.vue";
 
 interface IApp extends Vue {
 

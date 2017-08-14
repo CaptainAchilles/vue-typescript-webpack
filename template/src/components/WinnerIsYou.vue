@@ -1,5 +1,5 @@
 <template>
-    <h1 class="winner" @click="doStuff" v-if="text">{{ text }}</h1>
+    <h1 class="winner" @click="doStuff" v-if="text">\{{ text }}</h1>
 </template>
 
 <style scoped>
